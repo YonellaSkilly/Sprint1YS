@@ -1,0 +1,8 @@
+import pymongo
+from pymongo import MongoClient
+client = MongoClient("mongodb+srv://username:password@cluster1-hc9jb.azure.mongodb.net/test?retryWrites=true&w=majority")
+
+db = client.sample_airbnb
+collection = db.listingsAndReviews.find()
+for inventory in collection:
+     print(inventory)
